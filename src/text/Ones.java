@@ -117,6 +117,7 @@ public class Ones {
 
 	short magic(int n) {
 		short damege = 0;
+		
 		return damege;
 	}
 	short magic(int[] cost) {
