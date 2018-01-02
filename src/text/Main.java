@@ -17,23 +17,11 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		 int key;
-		while(true) {
-			key = getKeyCode();
-			switch(key) {
-				
-			case 'a':
-			}
-				
-			Thread.sleep(10);
+		Ones pc = new Ones("あなた",255,0);
+		return;
 		}
 		// TODO 自動生成されたメソッド・スタブ
 
-	}
-	public void keyTyped(KeyEvent e) {
-		public char key = new char;
-		 public char key = getKeyChar();
-		
-	}
+
 
 }
