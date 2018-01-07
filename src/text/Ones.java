@@ -1,6 +1,5 @@
 package text;
 
-import java.util.Random;
 /**
  * PC含むキャラクタの生成
  */
@@ -10,10 +9,11 @@ public class Ones {
 	final short HumanBlood = 1000;//cc
 	
 	byte arraynumber;
-	Random rand = new Random();
+
 	boolean servive;
 	String name;
 	short speed;
+	float energy;
 	short Mbody;//要考慮
 	short body;
 	short protection;
@@ -29,9 +29,10 @@ public class Ones {
 		arraynumber = (byte)n;
 		servive = true;
 		name = null;
-		type = (byte)rand.nextInt(4);	
-		body = Mbody = (short)rand.nextInt((int)HumanBlood);
-		
+		type = (byte)Main.rand.nextInt(4);
+		speed = (short)Main.rand.nextInt(100);
+		body = Mbody = (short)Main.rand.nextInt(HumanBlood);
+		energy = 0;
 		switch(type) {
 			case 0:
 				for(i =0; i< 5 ;i++ ) {
@@ -41,7 +42,7 @@ public class Ones {
 				
 			case 1:
 				for(i =0; i< 5 ;i++ ) {
-					blood[i] = (short)rand.nextInt(HumanBlood * 4);
+					blood[i] = (short)Main.rand.nextInt(HumanBlood * 4);
 					if(Mbody < blood[i]) {
 						body = Mbody = blood[i];
 					}
@@ -56,7 +57,7 @@ public class Ones {
 				
 			case 3:
 				for(i =0; i< 5 ;i++ ) {
-					blood[i] = (short)rand.nextInt(HumanBlood * 10);
+					blood[i] = (short)Main.rand.nextInt(HumanBlood * 10);
 					if(Mbody < blood[i]) {
 						body = Mbody = blood[i];
 					}
@@ -88,10 +89,23 @@ public class Ones {
 	}
 	
 	void living(short damege) {
+
 		body -= damege;
 		servive = body > 0 ? true : false;
 		if(body <= 0 || arraynumber == 0)
 				System.out.println("GameOver");
+	}
+
+	void act(int i) {
+		energy += speed / 60;
+		if (energy >= 60) {
+			energy -= 60;
+			if(i == 0) {
+				
+			}else {
+				
+			}	
+		}
 	}
 
 }
