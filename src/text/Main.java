@@ -22,8 +22,10 @@ public class Main {
 	 * @throws InterruptedException 
 	 */
 	public static void main(String[] args) throws InterruptedException {
-			Action play = new Action();
-			play.gameloop();
+		
+//			Action play = new Action();
+//			play.gameloop();
+		Window mado = new Window();
 
 
 		return;
